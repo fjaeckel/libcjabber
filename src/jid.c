@@ -18,12 +18,12 @@ jabberID *createJabberID(char *jid){
   int size=0;
   
   if (!jid) return NULL;
-  newjid=malloc(sizeof(char)*3);
-  if (!newjid) return NULL;
-  /*
-   * TODO: implement newjid->full!
-   */
 
+  newjid=malloc(sizeof(char)*strlen(jid));
+
+  if (!newjid) return NULL;
+  
+  newjid->full = jid;
   tmp = strchr (jid, '/');
   if(tmp && strlen(tmp)>1)
     newjid->resource = tmp + 1;
