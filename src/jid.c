@@ -7,6 +7,7 @@
  *  -> user
  *  -> server
  *  -> resource
+ *  -> full
  * args:    const char *jabberid (notation: user@server/resource)
  * returns: a struct of the type jabberid
  */
