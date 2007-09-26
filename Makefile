@@ -20,7 +20,7 @@ SRC=src
 LIBS=-lssl `xml2-config --libs`
 #CFLAGS=-Wall -DDEBUG -Iinclude -ggdb3 -g
 #CFLAGS=-Wall -DDEBUG -Iinclude 
-CFLAGS=-Wall -I./include -fPIC `xml2-config --cflags` -O2
+CFLAGS=-Wall -I./include -fPIC `xml2-config --cflags` -O4
 OBJ=jid.o messages.o presence.o convert.o subscription.o roster.o base64.o
 
 
