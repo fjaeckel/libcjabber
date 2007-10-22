@@ -19,11 +19,9 @@
 #include <stdlib.h>
 #include <libxml/parser.h>
 #include <libxml/tree.h>
-/*
- * TODO: to == NULL
- */
+
 char *createSubscriptionMsg(int type, char *to, char *from){
-  if (!type && !to)
+  if (!type || !to)
     return NULL;
 
   char *subType = NULL;
