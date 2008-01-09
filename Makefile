@@ -17,11 +17,11 @@
 
 CC=gcc
 SRC=src
-LIBS=-lssl `xml2-config --libs`
+LIBS=-lssl `xml2-config --libs` -lcrypto
 #CFLAGS=-Wall -DDEBUG -Iinclude -ggdb3 -g
-#CFLAGS=-Wall -DDEBUG -Iinclude 
-CFLAGS=-Wall -I./include -fPIC `xml2-config --cflags` -O4
-OBJ=jid.o messages.o presence.o convert.o subscription.o roster.o base64.o
+CFLAGS=-Wall -DDEBUG -Iinclude -I./include -fPIC `xml2-config --cflags`
+#CFLAGS=-Wall -I./include -fPIC `xml2-config --cflags` -O4
+OBJ=jid.o messages.o presence.o convert.o subscription.o roster.o base64.o sha.o
 
 
 all: jabber
@@ -49,6 +49,9 @@ roster.o:
 
 base64.o:
 	${CC} -c ${SRC}/base64.c -o ${SRC}/base64.o ${CFLAGS}
+
+sha.o:
+	${CC} -c ${SRC}/sha.c -o ${SRC}/sha.o ${CFLAGS} 
 
 jabber.o: ${OBJ}
 	${CC} -c ${SRC}/jabber.c -o ${SRC}/jabber.o ${CFLAGS} 
