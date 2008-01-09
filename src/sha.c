@@ -44,13 +44,11 @@ char *create_sha_hash(char *data) {
   }
   printf("\nmd_len: %d, i: %d\n",md_len, i);
 #endif
-
-  data=NULL;
-  data=malloc(md_len);
-  char buf[2];
   for(i = 0; i < md_len; i++){
-    sprintf(buf, "%02x", md_value[i]);
-    strcat(data,(char*) buf);
+//    snprintf((char)buf, 1, "%02x", md_value[i]);
+    printf("%02x",md_value[i]); 
   }
+  puts("");
+  printf("data: %s\n",data);
   return data;
 }
