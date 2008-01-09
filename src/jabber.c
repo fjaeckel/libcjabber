@@ -49,7 +49,7 @@ int main (int argc, char **argv){
   clear=decode_base64(base64);
   printf("clear: %s\n",clear);
   sha=create_sha_hash("foobarblubb");
-  printf("sha: %s, strlen(sha): %d\n",sha, strlen(sha));
+  printf("sha: %s\n",sha);
 
   return 0;
 }
