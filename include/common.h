@@ -17,15 +17,26 @@
 
 #include "libcjabber.h"
 #include <unistd.h>
+
+/* creates a new jabberid of out type jabberID */
 jabberID *createJabberID(char *jid);
+/* creates a new jabber message */
 char *createMessage(char *text, char *to, char *from, int type, char *subject);
+/* creates a new presence message */
 char *createPresenceMsg(int state, char *text, char *to, char *from, int priority);
+/* creates some subscription stanzas */
 char *createSubscriptionMsg(int type, char *to, char *from);
+/* forms a new request of the whole roster */
 char *requestRoster(char *from, char *id);
+/* sets an entry in the roster */
 char *setRoster(char *from, char *id, char *jid, char *name, char *group, int subscription);
+/* checks if the given jabberid is valid */
 int jidIsValid(char *jid);
+
+/* base64 stuff */
 char *encode_base64(char *message);
 char *decode_base64(char *bs64str);
 
+/* 2 functions stolen from René Nussbaumer and Nico Schottelius */
 int ltostr(long value, unsigned int base, char* converted, size_t size);
 int ultostr(unsigned long value, unsigned int base, char* converted, size_t size);
