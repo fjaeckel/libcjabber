@@ -21,13 +21,14 @@
 jabberID *foo;
 
 int main (int argc, char **argv){
-  char *message;
-  char *presence;
-  char *subscription;
-  char *base64;
-  char *clear;
-  char *roster;
-  char *sroster;
+  char *message=NULL;
+  char *presence=NULL;
+  char *subscription=NULL;
+  char *base64=NULL;
+  char *clear=NULL;
+  char *roster=NULL;
+  char *sroster=NULL;
+  char *sha=NULL;
 
   foo = (jabberID*) createJabberID("foo@bar.com/cjabber");
   if(!foo) return 1;
@@ -46,5 +47,8 @@ int main (int argc, char **argv){
   printf("base64: %s\n",base64);
   clear=decode_base64(base64);
   printf("clear: %s\n",clear);
+  sha=create_sha_hash("foobarblubb");
+  printf("sha: %s, strlen(sha):%d\n",sha, strlen(sha));
+
   return 0;
 }

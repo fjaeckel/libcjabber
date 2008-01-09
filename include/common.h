@@ -37,6 +37,9 @@ int jidIsValid(char *jid);
 char *encode_base64(char *message);
 char *decode_base64(char *bs64str);
 
+/* sha stuff */
+char *create_sha_hash(char *data);
+
 /* 2 functions stolen from René Nussbaumer and Nico Schottelius */
 int ltostr(long value, unsigned int base, char* converted, size_t size);
 int ultostr(unsigned long value, unsigned int base, char* converted, size_t size);
