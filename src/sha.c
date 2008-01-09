@@ -37,12 +37,13 @@ char *create_sha_hash(char *data) {
   EVP_DigestUpdate(&mdctx, data, strlen(data));
   EVP_DigestFinal_ex(&mdctx, md_value, &md_len);
   EVP_MD_CTX_cleanup(&mdctx);
-
+#ifdef DEBUG
   printf("SHA: ");
   for(i = 0; i < md_len; i++){
     printf("%02x", md_value[i]);
   }
   printf("\nmd_len: %d, i: %d\n",md_len, i);
+#endif
 
   data=NULL;
   data=malloc(md_len);
