@@ -22,6 +22,9 @@
 #include <string.h>
 
 char *create_sha_hash(char *data) {
+  if(!data)
+    return NULL;
+
   EVP_MD_CTX mdctx;
   const EVP_MD *md;
   unsigned char md_value[EVP_MAX_MD_SIZE];
