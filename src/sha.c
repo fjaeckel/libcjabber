@@ -25,8 +25,9 @@
  * a function to create a sha-1 hash of data.
  * args:
  *    -> data - the data, the hash will be created from
+ *    -> size - size of the data
  */
-char *create_sha_hash(char *data) {
+char *create_sha_hash(char *data, int size) {
   if(!data)
     return NULL;
 
@@ -42,7 +43,7 @@ char *create_sha_hash(char *data) {
 
   EVP_MD_CTX_init(&mdctx);
   EVP_DigestInit_ex(&mdctx, md, NULL);
-  EVP_DigestUpdate(&mdctx, data, strlen(data));
+  EVP_DigestUpdate(&mdctx, data, size);
   EVP_DigestFinal_ex(&mdctx, md_value, &md_len);
   EVP_MD_CTX_cleanup(&mdctx);
 #ifdef DEBUG
@@ -65,6 +66,7 @@ char *create_sha_hash(char *data) {
 #ifdef DEBUG
     printf("%02x",md_value[i]); 
 #endif
+    /* TODO: remove strncat and strlen! */
     strncat(data,buf,strlen(buf));
   }
   if(!data)
