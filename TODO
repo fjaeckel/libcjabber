@@ -1,8 +1,6 @@
-- implementing all xml namespaces
-- creating a sha routine to create unique message IDs
+- implementing all xml xmpp namespaces
 - implement a sasl challenge routine
 - implement a tls routine (?? client side ??)
-- implementing message threads
 - testing
 - more testing
 - much more testing! :-P
