@@ -27,7 +27,6 @@
  *    -> to   - to whom the message goes
  *    -> from - who sends the message
  */
-
 char *createSubscriptionMsg(int type, char *to, char *from){
   if (!type || !to)
     return NULL;

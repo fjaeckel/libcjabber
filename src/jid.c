@@ -81,6 +81,16 @@ jabberID *createJabberID(char *jid){
   return newjid;
 }
 
+/*
+ * TODO: to be implemented
+ */
 int jidIsValid(char *jid){
   return 0;
+}
+
+/*
+ * TODO: to be implemented
+ */
+char *copyJabberIDtoChar(jabberID *jid){
+  return NULL;
 }
