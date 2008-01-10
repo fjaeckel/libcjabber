@@ -31,7 +31,9 @@
  *    -> subject - the subject of the message
  *    -> thread  - the thread id in sha form (actually only a char pointer)
  */
-char *createMessage(char *text, char *to, char *from, int type, char *subject, char *thread){
+char *createMessage(char *text, char *to, 
+                    char *from, int type, 
+                    char *subject, char *thread){
   if(!to)
     return NULL;
   char *msgType = NULL;

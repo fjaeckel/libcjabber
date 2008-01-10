@@ -61,7 +61,9 @@ char *requestRoster(char *from, char *id){
  *    -> name - the name which is displayed in the roster
  *    -> group - the group displayed in the roster
  */
-char *setRoster(char *from, char *id, char *jid, char *name, char *group, int subscription){
+char *setRoster(char *from, char *id, 
+                char *jid, char *name, 
+                char *group, int subscription){
   if(!from || !id || !jid)
     return NULL;
   int buffersize=0;

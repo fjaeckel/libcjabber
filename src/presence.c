@@ -31,7 +31,8 @@
  *    -> priority (the priority of the message)
  */
 
-char *createPresenceMsg(int state, char *text, char *to, char *from, int priority){
+char *createPresenceMsg(int state, char *text, 
+                        char *to, char *from, int priority){
   char *presText = NULL;
   int buffersize = 0;
   char *tmp = NULL;
