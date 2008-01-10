@@ -21,7 +21,7 @@
 /* creates a new jabberid of out type jabberID */
 jabberID *createJabberID(char *jid);
 /* creates a new jabber message */
-char *createMessage(char *text, char *to, char *from, int type, char *subject);
+char *createMessage(char *text, char *to, char *from, int type, char *subject, char *thread);
 /* creates a new presence message */
 char *createPresenceMsg(int state, char *text, char *to, char *from, int priority);
 /* creates some subscription stanzas */

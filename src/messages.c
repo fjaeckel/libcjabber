@@ -24,13 +24,14 @@
  * a simple function using libxml creating a message
  * and returning it as an char*
  * args:
- *    -> text - the text in the message
- *    -> to   - the recipient
- *    -> from - the sender
- * TODO:  
- *        thread ids for conversations (sha?)
+ *    -> text    - the text in the message
+ *    -> to      - the recipient
+ *    -> from    - the sender
+ *    -> type    - the message type
+ *    -> subject - the subject of the message
+ *    -> thread  - the thread id in sha form (actually only a char pointer)
  */
-char *createMessage(char *text, char *to, char *from, int type, char *subject){
+char *createMessage(char *text, char *to, char *from, int type, char *subject, char *thread){
   if(!to)
     return NULL;
   char *msgType = NULL;
@@ -67,6 +68,8 @@ char *createMessage(char *text, char *to, char *from, int type, char *subject){
   if(subject)
     xmlNewChild(root_node, NULL, BAD_CAST "subject", BAD_CAST subject);
   xmlNewChild(root_node, NULL, BAD_CAST "body", BAD_CAST text);
+  if(thread)
+    xmlNewChild(root_node, NULL, BAD_CAST "thread", BAD_CAST thread);
 
   xmlDocDumpFormatMemory(doc, &xmlbuff, &buffersize, 1);
 

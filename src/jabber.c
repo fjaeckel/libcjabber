@@ -34,7 +34,7 @@ int main (int argc, char **argv){
   foo = (jabberID*) createJabberID("foo@bar.com/cjabber");
   if(!foo) return 1;
   printf("foo->user: %s, foo->server: %s, foo->resource: %s, foo->full: %s\n",foo->user,foo->server,foo->resource,foo->full);
-  message=createMessage("Hello cruel world!","bar@foo.com/muh","foo@bar.com/cjabber",0,"foobar");
+  message=createMessage("Hello cruel world!","bar@foo.com/muh","foo@bar.com/cjabber",0,"foobar",create_sha_hash("foobarblubb"));
   printf("%s",message);
   presence=createPresenceMsg(2,"away from keyboard","mouse@comput.er/input", "foo@bar.com/bla", 23);
   printf("%s",presence);
