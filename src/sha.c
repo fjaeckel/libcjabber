@@ -21,6 +21,11 @@
 /* remove me */
 #include <string.h>
 
+/*
+ * a function to create a sha-1 hash of data.
+ * args:
+ *    -> data - the data, the hash will be created from
+ */
 char *create_sha_hash(char *data) {
   if(!data)
     return NULL;
