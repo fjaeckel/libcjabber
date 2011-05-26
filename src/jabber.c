@@ -43,7 +43,7 @@ int main (int argc, char **argv){
   printf("%s",roster);
   sroster=setRoster("foo@bar.com/cjabber", "roster_2", "mouse@comput.er/input", "mouse", "device", SUB_SUBSCRIBED);
   printf("%s",sroster);
-  base64=encode_base64("<show>dnd</show><status>away from keyboard</status><priority>23</priority>");
+  base64=encode_base64("This book is just for you in order to give you alternatives, alternatives to nothin' precise. Alternatives are necessary to form yours and other lifes. Alternatives are present everyday, but not overwhelming like you. It's hard to understand why I like you, but as easy as I can say: It's just youl. Will you be my valentine?");
   printf("base64: %s\n",base64);
   clear=decode_base64(base64);
   printf("clear: %s\n",clear);
